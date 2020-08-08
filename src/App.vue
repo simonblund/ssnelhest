@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header/>
+    <BirthdaySex :date="defaultDate" :sex="sex"/>
+    <SSNSection />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import BirthdaySex from './components/BirthdaySex.vue';
+import Header from './components/Header.vue';
+import SSNSection from './components/SSNSection.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    BirthdaySex,
+    Header,
+    SSNSection,
+  },
+  data() {
+    let defaultDate = new Date();
+    const sex = 'N';
+    defaultDate.setFullYear(defaultDate.getFullYear() - 70);
+    defaultDate = defaultDate.toISOString().substring(0, 10);
+    console.log(defaultDate);
+    return {
+      defaultDate,
+      sex,
+    };
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
