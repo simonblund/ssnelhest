@@ -1,18 +1,21 @@
 <template>
- <div class="tile is-ancestor">
-     <SSNTile v-for="country in countries"
+
+<div class="columns is-multiline is-1-mobile is-6-desktop is-8-widescreen">
+    <SSNTile v-for="country in countries"
      :key="country"
-     :country="country"/>
+     :country="country"
+     :birthdate="birthdate"/>
+
 </div>
 
 </template>
 
 <script>
-import { FinnishSSN } from 'finnish-ssn';
 import SSNTile from './SSNTile.vue';
 
 export default {
   name: 'SSNSection',
+  props: ['birthdate', 'sex'],
   components: {
     SSNTile,
   },

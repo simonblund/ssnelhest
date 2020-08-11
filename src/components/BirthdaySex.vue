@@ -13,11 +13,11 @@
           I don't care
         </label>
         <label class="radio">
-          <input class=" is-large" type="radio" name="sex" value="M" v-model="sex">
+          <input class=" is-large" type="radio" name="sex" value="male" v-model="sex">
           Male
         </label>
         <label class="radio">
-            <input class=" is-large" type="radio" name="sex" value="F" v-model="sex">
+            <input class=" is-large" type="radio" name="sex" value="female" v-model="sex">
             Female
           </label>
       </div>
@@ -32,10 +32,10 @@ export default {
   computed: {
     _date: {
       get() {
+        console.log('bs', this.sex);
         return this.date;
       },
       set(newDate) {
-        console.log(newDate);
         if (newDate.length === 10) {
           this.date = newDate;
         }
