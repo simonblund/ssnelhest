@@ -20,10 +20,10 @@ export default {
   },
   data() {
     const countries = [
-      { country: 'sweden' },
-      { country: 'finland' },
-      { country: 'estonia' },
-      { country: 'latvia' },
+      { country: 'sweden', state: 'READY' },
+      { country: 'finland', state: 'NOT_READY' },
+      { country: 'estonia', state: 'READY' },
+      { country: 'latvia', state: 'FAIL' },
     ];
 
     return {

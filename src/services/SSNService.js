@@ -1,6 +1,7 @@
 /* eslint-disable no-case-declarations */
 import { FinnishSSN } from 'finnish-ssn';
 import * as Isikukood from 'isikukood';
+import SwedishSSN from 'swedish-ssn-tool';
 
 class SSN {
   #sex;
@@ -46,7 +47,7 @@ class SSN {
 export default function generateSSN(country, sex, birthdate) {
   switch (country.country) {
     case 'sweden':
-      return '20001212-1234';
+      return SwedishSSN.generateSSNWithParameters(new Date(birthdate), sex);
     case 'finland':
       return FinnishSSN.createWithAge(20);
     case 'estonia':

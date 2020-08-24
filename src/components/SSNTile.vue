@@ -2,7 +2,8 @@
  <div class="column tile is-parent is-2 has-background-info ml-1 has-text-white">
   <article class="tile is-child">
     <p class="title has-text-white">{{country.country}}</p>
-  <div class="content">
+  <div class="content ">
+    <p>{{country.state}}</p>
     <p> SSN: {{ssn}}</p>
   </div>
   </article>
