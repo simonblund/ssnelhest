@@ -1,9 +1,9 @@
 <template>
-  <section class="section" id="birthdaysex">
+  <div class="columns is-multiline is-1-mobile is-6-desktop is-8-widescreen">
     <div class="container">
       <div class="field">
         <div class="control">
-          <input class="input is-large is-primary" type="date" v-model="_date">
+          <input class="input is-large is-primary" type="date" v-model="dateOfBirth">
         </div>
       </div>
 
@@ -22,25 +22,31 @@
           </label>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'BirthdaySex',
-  props: ['date', 'sex'],
   computed: {
-    _date: {
+    sex: {
       get() {
-        console.log('bs', this.sex);
-        return this.date;
+        return this.$store.state.sex;
       },
-      set(newDate) {
-        if (newDate.length === 10) {
-          this.date = newDate;
-        }
+      set(value) {
+        this.$store.commit('changeSex', value);
       },
     },
+    dateOfBirth: {
+      get() {
+        return this.$store.state.dateOfBirth;
+      },
+      set(value) {
+        this.$store.commit('setDate', value);
+      },
+    },
+  },
+  methods: {
   },
 };
 </script>

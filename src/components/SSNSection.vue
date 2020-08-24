@@ -4,7 +4,7 @@
     <SSNTile v-for="country in countries"
      :key="country"
      :country="country"
-     :birthdate="birthdate"/>
+     />
 
 </div>
 
@@ -15,7 +15,6 @@ import SSNTile from './SSNTile.vue';
 
 export default {
   name: 'SSNSection',
-  props: ['birthdate', 'sex'],
   components: {
     SSNTile,
   },

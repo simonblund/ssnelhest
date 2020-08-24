@@ -16,11 +16,21 @@ import generateSSN from '../services/SSNService';
 
 export default {
   name: 'SSNTile',
-  props: ['country', 'sex', 'birthdate'],
+  props: ['country'],
   computed: {
+    sex: {
+      get() {
+        return this.$store.state.sex;
+      },
+    },
+    dateOfBirth: {
+      get() {
+        return this.$store.state.dateOfBirth;
+      },
+    },
     ssn: {
       get() {
-        return generateSSN(this.country, this.sex, this.birthdate);
+        return generateSSN(this.country, this.sex, this.dateOfBirth);
       },
     },
   },
