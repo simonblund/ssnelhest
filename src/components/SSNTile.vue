@@ -18,6 +18,17 @@ import generateSSN from '../services/SSNService';
 export default {
   name: 'SSNTile',
   props: ['country'],
+  created() {
+    navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
+      if (result.state === 'granted' || result.state === 'prompt') {
+        window.addEventListener('keydown', (e) => {
+          if (e.key === this.country.copy) {
+            navigator.clipboard.writeText(this.ssn);
+          }
+        });
+      }
+    });
+  },
   computed: {
     sex: {
       get() {

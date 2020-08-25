@@ -1,6 +1,6 @@
 <template>
 
-<div class="columns is-multiline is-1-mobile is-6-desktop is-8-widescreen">
+<div class="columns is-multiline is-1-mobile is-6-desktop is-8-widescreen is-vcentered is-centered">
     <SSNTile v-for="country in countries"
      :key="country"
      :country="country"
@@ -20,10 +20,10 @@ export default {
   },
   data() {
     const countries = [
-      { country: 'sweden', state: 'READY' },
-      { country: 'finland', state: 'NOT_READY' },
-      { country: 'estonia', state: 'READY' },
-      { country: 'latvia', state: 'FAIL' },
+      { country: 'sweden', comment: '', copy: 's' },
+      { country: 'finland', comment: 'Does not take into account date of birth', copy: 'f' },
+      { country: 'estonia', comment: '', copy: 'e' },
+      { country: 'latvia', comment: '', copy: 'l' },
     ];
 
     return {

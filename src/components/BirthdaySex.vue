@@ -1,5 +1,5 @@
 <template>
-  <div class="columns is-multiline is-1-mobile is-6-desktop is-8-widescreen">
+  <div class="columns is-multiline is-1-mobile is-6-desktop is-8-widescreen mt-4 mb-4">
     <div class="container">
       <div class="field">
         <div class="control">
