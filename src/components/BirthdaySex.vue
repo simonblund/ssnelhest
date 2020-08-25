@@ -9,10 +9,6 @@
 
       <div class="control">
         <label class="radio">
-          <input class=" is-large" type="radio" name="sex" value="N" v-model="sex">
-          I don't care
-        </label>
-        <label class="radio">
           <input class=" is-large" type="radio" name="sex" value="male" v-model="sex">
           Male
         </label>
