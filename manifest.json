@@ -1,0 +1,1 @@
+{"name":"SSNELHEST","short_name":"SSNelHEST","theme_color":"#3367D6","icons":[{"src":"/images/icons-192.png","type":"image/png","sizes":"192x192"},{"src":"/images/icons-512.png","type":"image/png","sizes":"512x512"}],"start_url":"/?source=pwa","display":"standalone","background_color":"#3367D6","description":"Handy SSN generator.","scope":"/"}
