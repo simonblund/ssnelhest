@@ -2,6 +2,7 @@
 import { FinnishSSN } from 'finnish-ssn';
 import * as Isikukood from 'isikukood';
 import SwedishSSN from 'swedish-ssn-tool';
+import lvSSNGenerator from './latvianSSN';
 
 class SSN {
   #sex;
@@ -49,20 +50,21 @@ export default function generateSSN(country, sex, birthdate) {
     case 'sweden':
       return SwedishSSN.generateSSNWithParameters(new Date(birthdate), sex);
     case 'finland':
-      return FinnishSSN.createWithAge(20);
+      const fissn = new SSN(birthdate, sex);
+      return FinnishSSN.createWithAge(2020 - fissn.year);
     case 'estonia':
-      const ssn = new SSN(birthdate, sex);
-      console.log(sex);
-      ssn.ssn = Isikukood.generate({
-        gender: ssn.sex,
-        birthDay: ssn.day,
-        birthMonth: ssn.month,
+      const sessn = new SSN(birthdate, sex);
+      sessn.ssn = Isikukood.generate({
+        gender: sessn.sex,
+        birthDay: sessn.day,
+        birthMonth: sessn.month,
         // eslint-disable-next-line comma-dangle
-        birthYear: ssn.year
+        birthYear: sessn.year
       });
-      return ssn.ssn;
+      return sessn.ssn;
     case 'latvia':
-      return '20001212-1234';
+      const lvssn = new SSN(birthdate, sex);
+      return lvSSNGenerator(lvssn.day, lvssn.month, lvssn.year);
     default:
       return FinnishSSN.createWithAge(20);
   }
